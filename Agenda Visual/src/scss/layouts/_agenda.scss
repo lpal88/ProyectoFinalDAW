@@ -1,25 +1,91 @@
 body {
     background-color: $background-pink;
     box-sizing: border-box;
+    
 } 
 
-#createAgenda__container {
-
-    display: flex;
-    flex-wrap: wrap;
+#agenda__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    z-index: 0;
+    margin: 20px 60px;
 }
+
+.material-symbols-outlined {
+
+
+}
+
+.agenda__title {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+
+.agenda__search {
+    width: 40vw;
+    height: 5vh;
+    background-color: white;
+    border-radius: 3%;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.agenda__pictos {
+    width: 90vw;
+    height: 30vh;
+    background-color: white;
+    border-radius: 3%;
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.agenda__board {
+    width: 90vw;
+    height: 40vh;
+    background-color: $background-salmon;
+    border-radius: 3%;
+    grid-column: 1 / 4;
+    grid-row: 4;
+}
+
 
 .background__menu, .background__profile {
     background-color: $background-salmon;
+    position: absolute;
+    z-index: -1;
+
 }
 
 .background__menu {
     clip-path: circle(50% at 50% 50%);
-    height: 40vh;
+    height: 50vh;
     width: 40vw;
+    top: -20vh;
+    right: -15vw;
 }
 
 .background__profile {
     height: 20vh;
-    width: 20vw; 
+    width: 30vw; 
+    top: 5vh;
+    left: -10vw; 
+    border-radius: 3%;
+}
+
+.profile__button {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 10vh;
+}
+
+.menu__button {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 10vh;
 }
