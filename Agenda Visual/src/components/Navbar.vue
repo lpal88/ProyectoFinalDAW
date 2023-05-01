@@ -1,6 +1,6 @@
 <template>
     <button class="menu__button" @click="toggleHidden(selector)">
-    <img class="menu__image" src="../assets/images/menu (1).svg" alt="botón menú principal">
+    <img class="menu__icon" src="../assets/images/menu (1).svg" alt="botón menú principal">
     </button>
     <nav class="header__menu" :hidden="isHidden" ref="element">
         <ul class="menu__list">
@@ -31,6 +31,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>
