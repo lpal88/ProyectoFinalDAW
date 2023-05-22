@@ -18,7 +18,9 @@
                 <img src="" alt="fuera de casa" class="category__icon">
             </div>
             <div class="pictos__separator"></div>
-            <div class="pictos__dbContainer"></div>
+            <div class="pictos__dbContainer">
+                
+            </div>
             <div class="pictos__moreOptions">
                 <img src="" alt="buscar en ARASAAC" class="moreOptions__icon">
                 <img src="" alt="subir imagen" class="moreOptions__icon">
@@ -39,6 +41,10 @@
 
 <script>
 import Navbar from '../components/Navbar.vue';
+import {mapActions, mapState, mapGetters} from "vuex"
+export default {
+    
+}
 
 
 </script>
