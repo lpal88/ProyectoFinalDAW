@@ -19,7 +19,13 @@
             </div>
             <div class="pictos__separator"></div>
             <div class="pictos__dbContainer">
-                
+            <!--     <ul class="list">
+                    <li v-for="picto in pictos" :key="picto.id" class="list__pictos"><img :src=picto.pictogram></li>
+                </ul> -->
+    <!--             <img :src=pictos[3].pictogram.data> -->
+
+                <img :src="`data:image/png;base64,${pictos[3].pictogram.data}`">
+<!--                <p>{{ pictos[3] }}</p> -->
             </div>
             <div class="pictos__moreOptions">
                 <img src="" alt="buscar en ARASAAC" class="moreOptions__icon">
@@ -43,9 +49,31 @@
 import Navbar from '../components/Navbar.vue';
 import {mapActions, mapState, mapGetters} from "vuex"
 export default {
-    
+    name: 'Create&modifyAgenda',
+    components: {
+        Navbar
+    },
+    data() {
+        return {
+            pictos: [],
+  
 }
+}, 
+// mapActions --> ('module name', {method name: 'action name'})
+// Not executed yet
+    methods: {
+        ...mapActions('pictograms', {
+            fetchPictos:'fetchPictos'
+        }),
+},
+// to execute the previous action
+    async created() {
+        await this.fetchPictos() // updating state
+        this.pictos = this.$store.state.pictograms.items //storing in a new variable
+        // console.log(this.pictos)
+    },
 
+}
 
 </script>
 
